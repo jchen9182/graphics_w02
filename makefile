@@ -19,4 +19,4 @@ display.o: display.c display.h ml6.h
 
 
 clean:
-	rm *.o *~ main
+	rm *.o *~ main ascii.ppm binary.ppm lines.png
