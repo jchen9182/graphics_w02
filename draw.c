@@ -20,12 +20,10 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     int A = delta_y;
     int B = -1 * delta_x;
     int d;
-    printf("delta_y: %d, delta_x: %d\n", delta_y, delta_x);
 
     if (delta_y * delta_x >= 0) {
         // Octant 1 & 5
         if (delta_y <= delta_x) {
-            printf("OCTANT 1\n");
             d = 2 * A + B;
 
             while (x <= x1) {
@@ -40,7 +38,6 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
         }
         // Octant 2 & 6
         else {
-            printf("OCTANT 2\n");
             d = A + 2 * B;
         
             while (y <= y1) {
@@ -56,7 +53,6 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     }
     // Octant 8 & 4
     else if (abs(delta_y) <= abs(delta_x)) {
-        printf("OCTANT 8\n");
         d = A - 2 * B;
         
         while (x <= x1) {
@@ -71,7 +67,6 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     }
     // Octant 7 & 3
     else {
-        printf("OCTANT 7\n");
         d = 2 * A - B;
 
         while (y >= y1) {
