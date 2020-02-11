@@ -21,6 +21,13 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     int B = -1 * delta_x;
     int d;
 
+    if (delta_x == 0) {
+        while (y > y1) {
+            plot(s, c, x, y);
+            y--;
+        }
+    }
+
     if (delta_y * delta_x >= 0) {
         // Octant 1 & 5
         if (delta_y <= delta_x) {
